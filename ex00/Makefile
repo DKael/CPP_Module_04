@@ -6,14 +6,16 @@
 #    By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/05/03 20:30:42 by hyungdki          #+#    #+#              #
-#    Updated: 2023/11/28 14:42:00 by hyungdki         ###   ########.fr        #
+#    Updated: 2023/11/28 15:05:29 by hyungdki         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 SRCS =	main.cpp \
 		Dog.cpp \
 		Cat.cpp \
-		Animal.cpp
+		Animal.cpp \
+		WrongCat.cpp \
+		WrongAnimal.cpp
 
 OBJS = 	${SRCS:.cpp=.o}
 

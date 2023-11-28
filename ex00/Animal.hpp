@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:25:08 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 14:29:17 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:31:58 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,17 @@ private:
 
 protected:
 	std::string type;
+
 public:
 	Animal();
+	Animal(const std::string& _type);
 	Animal(const Animal& origin);
 	Animal& operator=(const Animal& origin);
-	~Animal();
-	void makeSound();
+	virtual ~Animal();
+	virtual std::string getType() const ;
+	virtual void setType(const std::string& _type);
+	virtual void makeSound() const;
+	
 };
 
 #endif

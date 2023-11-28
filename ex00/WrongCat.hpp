@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Dog.hpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/28 14:35:57 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 15:34:41 by hyungdki         ###   ########.fr       */
+/*   Created: 2023/11/28 14:34:11 by hyungdki          #+#    #+#             */
+/*   Updated: 2023/11/28 14:45:00 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef DOG_HPP
-#define DOG_HPP
+#ifndef WRONGCAT_HPP
+#define WRONGCAT_HPP
 
 #include <iostream>
 #include <string>
-#include "Animal.hpp"
+#include "WrongAnimal.hpp"
 
-class Dog : public Animal
+class WrongCat : public WrongAnimal
 {
 private:
 
 protected:
 
 public:
-	Dog();
-	Dog(const std::string& _type);
-	Dog(const Dog& origin);
-	Dog& operator=(const Dog& origin);
-	virtual ~Dog();
-	virtual void makeSound() const;
-	
+	WrongCat();
+	WrongCat(const std::string& _type);
+	WrongCat(const WrongCat& origin);
+	WrongCat& operator=(const WrongCat& origin);
+	~WrongCat();
+	void makeSound() const;
+
 };
 
 #endif

@@ -1,36 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:34:57 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 15:25:34 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/28 14:35:24 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat() : Animal("Cat")
+WrongCat::WrongCat() : WrongAnimal("WrongCat")
 {
-	std::cout << "[Cat class's default constructor called]\n";
+	std::cout << "[WrongCat class's default constructor called]\n";
 }
 
-Cat::Cat(const std::string& _type) : Animal(_type)
+WrongCat::WrongCat(const std::string& _type) : WrongAnimal(_type)
 {
-	std::cout << "[Cat class's user define constructor called]\n";
+	std::cout << "[WrongCat class's user define constructor called]\n";
 }
 
-Cat::Cat(const Cat& origin)
+WrongCat::WrongCat(const WrongCat& origin)
 {
-	std::cout << "[Cat class's Copy constructor called]\n";
+	std::cout << "[WrongCat class's Copy constructor called]\n";
 	*this = origin;
 }
 
-Cat& Cat::operator=(const Cat& origin)
+WrongCat& WrongCat::operator=(const WrongCat& origin)
 {
-	std::cout << "[Cat class's Copy assignment operator called]\n";
+	std::cout << "[WrongCat class's Copy assignment operator called]\n";
 	if (this != &origin)
 	{
 		type = origin.type;
@@ -38,12 +38,12 @@ Cat& Cat::operator=(const Cat& origin)
 	return *this;
 }
 
-Cat::~Cat()
+WrongCat::~WrongCat()
 {
-	std::cout << "[Cat class's Destructor called]\n";
+	std::cout << "[WrongCat class's Destructor called]\n";
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
 	std::cout << "Meow~\n";
 }

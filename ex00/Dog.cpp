@@ -6,15 +6,20 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:36:35 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 14:37:59 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/11/28 15:19:57 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog() : type("Dog")
+Dog::Dog() : Animal("Dog")
 {
 	std::cout << "[Dog class's default constructor called]\n";
+}
+
+Dog::Dog(const std::string& _type) : Animal(_type)
+{
+	std::cout << "[Dog class's user define constructor called]\n";
 }
 
 Dog::Dog(const Dog& origin)
@@ -38,7 +43,7 @@ Dog::~Dog()
 	std::cout << "[Dog class's Destructor called]\n";
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 	std::cout << "WOOF WOOF!\n";
 }
