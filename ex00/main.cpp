@@ -6,15 +6,15 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:38:09 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 17:26:57 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:28:07 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
+#include "WrongAnimal.hpp"
+#include "WrongCat.hpp"
 
 int main()
 {
@@ -28,19 +28,24 @@ int main()
 	j->makeSound();
 	meta->makeSound();
 
+	// *i = *j;
+	// std::cout << j->getType() << " " << std::endl;
+	// std::cout << i->getType() << " " << std::endl;
+
 	delete meta;
 	delete j;
 	delete i;
 
-	// const WrongAnimal *Wrongmeta = new WrongAnimal();
-	// const WrongAnimal *Wrongi = new WrongCat();
+	const WrongAnimal *Wrongmeta = new WrongAnimal();
+	const WrongAnimal *Wrongi = new WrongCat();
 
-	// std::cout << Wrongi->getType() << " " << std::endl;
-	// Wrongi->makeSound();
-	// Wrongmeta->makeSound();
+	std::cout << Wrongmeta->getType() << " " << std::endl;
+	std::cout << Wrongi->getType() << " " << std::endl;
+	Wrongi->makeSound();
+	Wrongmeta->makeSound();
 
-	// delete Wrongmeta;
-	// delete Wrongi;
+	delete Wrongmeta;
+	delete Wrongi;
 	
 	return 0;
 }

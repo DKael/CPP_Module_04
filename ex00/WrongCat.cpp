@@ -38,6 +38,28 @@ WrongCat& WrongCat::operator=(const WrongCat& origin)
 	return *this;
 }
 
+void WrongCat::_copy(const WrongCat& origin)
+{
+	type = origin.type;
+}
+
+// WrongAnimal& WrongCat::operator=(const WrongAnimal& origin)
+// {
+// 	std::cout << "[WrongCat class's Copy assignment operator called]\n";
+// 	if (this != &origin)
+// 	{
+// 		try
+// 		{
+// 			_copy(dynamic_cast<const WrongCat&>(origin));
+// 		}
+// 		catch(std::bad_cast)
+// 		{
+// 			std::cout << "[Cannot asign to WrongCat class!]\n";
+// 		}
+// 	}	
+// 	return *this;
+// }
+
 WrongCat::~WrongCat()
 {
 	std::cout << "[WrongCat class's Destructor called]\n";

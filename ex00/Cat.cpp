@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:34:57 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 15:25:34 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:12:38 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,28 @@ Cat& Cat::operator=(const Cat& origin)
 	if (this != &origin)
 	{
 		type = origin.type;
+	}	
+	return *this;
+}
+
+void Cat::_copy(const Cat& origin)
+{
+	type = origin.type;
+}
+
+Animal& Cat::operator=(const Animal& origin)
+{
+	std::cout << "[Cat class's Copy assignment operator called]\n";
+	if (this != &origin)
+	{
+		try
+		{
+			_copy(dynamic_cast<const Cat&>(origin));
+		}
+		catch(std::bad_cast)
+		{
+			std::cout << "[Cannot asign to Cat class!]\n";
+		}
 	}	
 	return *this;
 }

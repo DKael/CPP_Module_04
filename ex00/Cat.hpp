@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:34:11 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 15:34:36 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:07:53 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,12 +22,14 @@ class Cat : public Animal
 private:
 
 protected:
+	virtual void _copy(const Cat& origin);
 
 public:
 	Cat();
 	Cat(const std::string& _type);
 	Cat(const Cat& origin);
-	Cat& operator=(const Cat& origin);
+	virtual Cat& operator=(const Cat& origin);
+	virtual Animal& operator=(const Animal& origin);
 	virtual ~Cat();
 	virtual void makeSound() const;
 	

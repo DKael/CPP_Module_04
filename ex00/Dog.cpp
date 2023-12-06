@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:36:35 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 15:19:57 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:12:39 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,28 @@ Dog& Dog::operator=(const Dog& origin)
 	if (this != &origin)
 	{
 		type = origin.type;
+	}	
+	return *this;
+}
+
+void Dog::_copy(const Dog& origin)
+{
+	type = origin.type;
+}
+
+Animal& Dog::operator=(const Animal& origin)
+{
+	std::cout << "[Dog class's Copy assignment operator called]\n";
+	if (this != &origin)
+	{
+		try
+		{
+			_copy(dynamic_cast<const Dog&>(origin));
+		}
+		catch(std::bad_cast)
+		{
+			std::cout << "[Cannot asign to Dog class!]\n";
+		}
 	}	
 	return *this;
 }

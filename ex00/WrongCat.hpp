@@ -22,12 +22,14 @@ class WrongCat : public WrongAnimal
 private:
 
 protected:
+	void _copy(const WrongCat& origin);
 
 public:
 	WrongCat();
 	WrongCat(const std::string& _type);
 	WrongCat(const WrongCat& origin);
 	WrongCat& operator=(const WrongCat& origin);
+	//WrongAnimal& operator=(const WrongAnimal& origin);
 	~WrongCat();
 	void makeSound() const;
 
