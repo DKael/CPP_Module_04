@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <string>
+#include <typeinfo>
 #include "AAnimal.hpp"
 #include "Brain.hpp"
 

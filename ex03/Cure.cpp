@@ -17,7 +17,7 @@ Cure::Cure() : AMateria("cure")
 	;
 }
 
-Cure::Cure(const Cure& origin)
+Cure::Cure(const Cure& origin) : AMateria(origin.type)
 {
 	*this = origin;
 }
@@ -35,7 +35,7 @@ Cure& Cure::operator=(const AMateria& origin)
 		{
 			_copy(dynamic_cast<const Cure&>(origin));
 		}
-		catch(std::bad_cast)
+		catch(std::bad_cast& bc)
 		{
 			std::cout << "* Cannot assign to Cure class!\n";
 		}

@@ -22,7 +22,7 @@ WrongCat::WrongCat(const std::string& _type) : WrongAnimal(_type)
 	std::cout << "[WrongCat class's user define constructor called]\n";
 }
 
-WrongCat::WrongCat(const WrongCat& origin)
+WrongCat::WrongCat(const WrongCat& origin) : WrongAnimal(origin.type)
 {
 	std::cout << "[WrongCat class's Copy constructor called]\n";
 	*this = origin;

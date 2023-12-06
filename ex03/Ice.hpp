@@ -15,6 +15,8 @@
 
 #include <iostream>
 #include <string>
+#include <typeinfo>
+
 #include "AMateria.hpp"
 #include "ICharacter.hpp"
 

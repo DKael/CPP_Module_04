@@ -57,7 +57,7 @@ int main()
 	for (int i = 0; i < ground_idx; i++)
 		delete ground[i];
 
-	system("leaks character");
+	//system("leaks character");
 
 	return 0;
 }

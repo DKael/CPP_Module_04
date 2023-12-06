@@ -51,7 +51,7 @@ int main()
 	for (int i = 0; i < 10; i++)
 		delete meta[i];
 	
-	system("leaks abstract");
+	//system("leaks abstract");
 
 	return 0;
 }

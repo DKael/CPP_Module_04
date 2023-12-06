@@ -22,7 +22,7 @@ Cat::Cat(const std::string& _type) : Animal(_type)
 	std::cout << "[Cat class's user define constructor called]\n";
 }
 
-Cat::Cat(const Cat& origin)
+Cat::Cat(const Cat& origin) : Animal(origin.type)
 {
 	std::cout << "[Cat class's Copy constructor called]\n";
 	*this = origin;
@@ -52,7 +52,7 @@ Animal& Cat::operator=(const Animal& origin)
 		{
 			_copy(dynamic_cast<const Cat&>(origin));
 		}
-		catch(std::bad_cast)
+		catch(std::bad_cast& bc)
 		{
 			std::cout << "[Cannot asign to Cat class!]\n";
 		}

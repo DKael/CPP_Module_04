@@ -17,7 +17,7 @@ Ice::Ice() : AMateria("ice")
 	;
 }
 
-Ice::Ice(const Ice& origin)
+Ice::Ice(const Ice& origin) : AMateria(origin.type)
 {
 	*this = origin;
 }
@@ -35,7 +35,7 @@ Ice& Ice::operator=(const AMateria& origin)
 		{
 			_copy(dynamic_cast<const Ice&>(origin));
 		}
-		catch(std::bad_cast)
+		catch(std::bad_cast& bc)
 		{
 			std::cout << "* Cannot assign to Ice class!\n";
 		}
