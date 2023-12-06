@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:34:57 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 19:04:01 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 14:57:30 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Cat::Cat(const std::string& _type) : Animal(_type)
 	brain = new Brain();
 }
 
-Cat::Cat(const Cat& origin)
+Cat::Cat(const Cat& origin) : brain(0)
 {
 	std::cout << "[Cat class's Copy constructor called]\n";
 	*this = origin;
@@ -42,6 +42,30 @@ Cat& Cat::operator=(const Cat& origin)
 	return *this;
 }
 
+void Cat::_copy(const Cat& origin)
+{
+	type = origin.type;
+	delete brain;
+	brain = new Brain(*(origin.brain));
+}
+
+Animal& Cat::operator=(const Animal& origin)
+{
+	std::cout << "[Cat class's Copy assignment operator called]\n";
+	if (this != &origin)
+	{
+		try
+		{
+			_copy(dynamic_cast<const Cat&>(origin));
+		}
+		catch(std::bad_cast)
+		{
+			std::cout << "[Cannot asign to Cat class!]\n";
+		}
+	}	
+	return *this;
+}
+
 Cat::~Cat()
 {
 	std::cout << "[Cat class's Destructor called]\n";
@@ -53,7 +77,7 @@ void Cat::makeSound() const
 	std::cout << "Meow~\n";
 }
 
-void Cat::getIdea(const std::string _idea)
+void Cat::think(const std::string _idea)
 {
 	(*brain).memorize(_idea);
 }
