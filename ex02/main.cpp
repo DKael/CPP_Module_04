@@ -6,15 +6,13 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:38:09 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/28 21:06:36 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:13:53 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AAnimal.hpp"
 #include "Dog.hpp"
 #include "Cat.hpp"
-// #include "WrongAnimal.hpp"
-// #include "WrongCat.hpp"
 
 int main()
 {
@@ -32,19 +30,28 @@ int main()
 		meta[i]->makeSound();
 
 
-	dynamic_cast<Dog*>(meta[0])->getIdea("'boring......'");
+	dynamic_cast<Dog*>(meta[0])->think("'boring......'");
 	Dog choco = *dynamic_cast<Dog*>(meta[0]);
 	
-	dynamic_cast<Dog*>(meta[0])->getIdea("'go to walk!'");
-	choco.getIdea("'play with ball!'");
+	dynamic_cast<Dog*>(meta[0])->think("'go to walk!'");
+	choco.think("'play with ball!'");
 
 	dynamic_cast<Dog*>(meta[0])->showAllIdea();
 	choco.showAllIdea();
+
+	dynamic_cast<Cat*>(meta[5])->think("'purring......'");
+	Cat tony = *dynamic_cast<Cat*>(meta[5]);
+	
+	dynamic_cast<Cat*>(meta[5])->think("'sleepy......'");
+	tony.think("'warm.......'");
+
+	dynamic_cast<Cat*>(meta[5])->showAllIdea();
+	tony.showAllIdea();
 		
 	for (int i = 0; i < 10; i++)
 		delete meta[i];
 	
-	system("leaks brain");
+	system("leaks abstract");
 
 	return 0;
 }
