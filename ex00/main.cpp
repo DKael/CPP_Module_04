@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 14:38:09 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/12/06 14:28:07 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:29:54 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,11 +38,12 @@ int main()
 
 	const WrongAnimal *Wrongmeta = new WrongAnimal();
 	const WrongAnimal *Wrongi = new WrongCat();
-
+	const WrongCat Wcat;
 	std::cout << Wrongmeta->getType() << " " << std::endl;
 	std::cout << Wrongi->getType() << " " << std::endl;
 	Wrongi->makeSound();
 	Wrongmeta->makeSound();
+	Wcat.makeSound();
 
 	delete Wrongmeta;
 	delete Wrongi;

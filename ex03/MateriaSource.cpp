@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 23:32:56 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/29 00:02:39 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:58:55 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(const MateriaSource& origin)
 {
+	for (int i = 0; i < MateriaSource::slotSize; i++)
+		slot[i] = NULL;
 	*this = origin;
 }
 
@@ -31,7 +33,10 @@ MateriaSource& MateriaSource::operator=(const MateriaSource& origin)
 		for (int i = 0; i < MateriaSource::slotSize; i++)
 		{
 			delete slot[i];
-			slot[i] = origin.slot[i];
+			if (origin.slot[i])
+				slot[i] = origin.slot[i]->clone();
+			else
+				slot[i] = NULL;
 		}
 		itemCnt = origin.itemCnt;
 	}
@@ -47,17 +52,23 @@ MateriaSource::~MateriaSource()
 void MateriaSource::learnMateria(AMateria* materia)
 {
 	if (itemCnt > 4)
-		return;
-
-	slot[itemCnt] = materia;
-	itemCnt++;
+	{
+		std::cout << "Cannot learn more because slot already full!\n";
+		return ;
+	}
+	if (materia)
+	{
+		slot[itemCnt] = materia->clone();
+		itemCnt++;
+	}
+	
 }
 
 AMateria* MateriaSource::createMateria(const std::string& type)
 {
 	for (int i = 0; i < itemCnt; i++)
 	{
-		if (slot[i]->getType() == type)
+		if (slot[i] && slot[i]->getType() == type)
 			return slot[i]->clone();
 	}
 	return (AMateria*)0;

@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 22:21:48 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/29 00:07:54 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 16:11:51 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ public:
 	virtual void equip(AMateria* m);
 	virtual void unequip(int idx);
 	virtual void use(int idx, ICharacter& target);
+	AMateria* getMateria(int idx) const ;
 
 };
 

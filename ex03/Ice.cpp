@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:57:57 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/29 00:15:55 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:51:01 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Ice& Ice::operator=(const AMateria& origin)
 		}
 		catch(std::bad_cast)
 		{
-			;
+			std::cout << "* Cannot assign to Ice class!\n";
 		}
 	}	
 	return *this;

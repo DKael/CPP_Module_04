@@ -6,7 +6,7 @@
 /*   By: hyungdki <hyungdki@student.42seoul.kr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/28 20:52:42 by hyungdki          #+#    #+#             */
-/*   Updated: 2023/11/29 00:20:59 by hyungdki         ###   ########.fr       */
+/*   Updated: 2023/12/06 15:50:31 by hyungdki         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ Cure& Cure::operator=(const AMateria& origin)
 		}
 		catch(std::bad_cast)
 		{
-			;
+			std::cout << "* Cannot assign to Cure class!\n";
 		}
 	}	
 	return *this;
